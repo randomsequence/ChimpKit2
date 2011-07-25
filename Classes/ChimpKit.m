@@ -119,7 +119,9 @@ static NSUInteger timeout = 10;
 - (void)notifyDelegateOfError:(NSError *)error {
     _error = [error retain];
 
-    if ([self.delegate respondsToSelector:@selector(ckRequestFailed:)]) {
+    if ([self.delegate respondsToSelector:@selector(ckRequestFailed:andError:)]) {
+        [self.delegate performSelector:@selector(ckRequestFailed:andError:) withObject:self withObject:error];
+    } else if ([self.delegate respondsToSelector:@selector(ckRequestFailed:)]) {
         [self.delegate performSelector:@selector(ckRequestFailed:) withObject:error];
     }
 }

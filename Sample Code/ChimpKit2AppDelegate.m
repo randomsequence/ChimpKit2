@@ -58,7 +58,7 @@
     NSLog(@"Response String: %@", [ckRequest responseString]);
 }
 
-- (void)ckRequestFailed:(NSError *)error {
+- (void)ckRequestFailed:(ChimpKit *)ckRequest andError:(NSError *)error {
     NSLog(@"Response Error: %@", error);
 }
 

@@ -19,6 +19,9 @@
 @optional
 - (void)ckRequestFailed:(NSError *)error;
 
+@optional
+- (void)ckRequestFailed:(ChimpKit *)ckRequest andError:(NSError *)error;
+
 @end
 
 @interface ChimpKit : NSOperation {
