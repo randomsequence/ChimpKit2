@@ -78,7 +78,7 @@ ChimpKit2 defaults to a 10 second timeout. You can change that (globally) to 30 
     [ck callApiMethod:@"listSubscribe" withParams:params];
 
 
-### MailChimp now supports OAuth2 and so does ChimpKit:
+### [MailChimp now supports OAuth2](http://apidocs.mailchimp.com/oauth2/) and so does ChimpKit:
 
 	//You don't have to use a navigation controller, but we'll put a cancel button on it for you if you do
 	CKAuthViewController *authViewController = [[CKAuthViewController alloc] initWithClientId:@"<YOUR_CLIENT_ID>" 
