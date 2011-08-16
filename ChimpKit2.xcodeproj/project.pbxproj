@@ -21,12 +21,14 @@
 		C2325E9C1296E7B5009BA5A7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C2325E951296E7B5009BA5A7 /* SBJsonWriter.m */; };
 		C2325EA41296E7F2009BA5A7 /* ChimpKit2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2325EA11296E7F2009BA5A7 /* ChimpKit2AppDelegate.m */; };
 		C2325EA51296E7F2009BA5A7 /* ChimpKit2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2325EA31296E7F2009BA5A7 /* ChimpKit2ViewController.m */; };
-		C2325EA81296E7FE009BA5A7 /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C2325EA71296E7FE009BA5A7 /* ChimpKit.m */; };
 		C2325ED91296F459009BA5A7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2325ED81296F459009BA5A7 /* CFNetwork.framework */; };
 		C2325EDB1296F459009BA5A7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2325EDA1296F459009BA5A7 /* MobileCoreServices.framework */; };
 		C2325F0A1296F63C009BA5A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2325F091296F63C009BA5A7 /* SystemConfiguration.framework */; };
 		C2A87EDE13B3A43B0084A30C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A87EDD13B3A43B0084A30C /* libz.dylib */; };
-		C2BFCC65134CA06500F3184D /* SubscribeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BFCC64134CA06500F3184D /* SubscribeAlertView.m */; };
+		C2B1C50413FAAF890091D116 /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B1C4FD13FAAF890091D116 /* ChimpKit.m */; };
+		C2B1C50513FAAF890091D116 /* CKAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B1C4FF13FAAF890091D116 /* CKAuthViewController.m */; };
+		C2B1C50613FAAF890091D116 /* SubscribeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B1C50113FAAF890091D116 /* SubscribeAlertView.m */; };
+		C2B1C50713FAAF890091D116 /* CKAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B1C50313FAAF890091D116 /* CKAuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,14 +59,17 @@
 		C2325EA11296E7F2009BA5A7 /* ChimpKit2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChimpKit2AppDelegate.m; path = "Sample Code/ChimpKit2AppDelegate.m"; sourceTree = "<group>"; };
 		C2325EA21296E7F2009BA5A7 /* ChimpKit2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChimpKit2ViewController.h; path = "Sample Code/ChimpKit2ViewController.h"; sourceTree = "<group>"; };
 		C2325EA31296E7F2009BA5A7 /* ChimpKit2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChimpKit2ViewController.m; path = "Sample Code/ChimpKit2ViewController.m"; sourceTree = "<group>"; };
-		C2325EA61296E7FE009BA5A7 /* ChimpKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChimpKit.h; sourceTree = "<group>"; };
-		C2325EA71296E7FE009BA5A7 /* ChimpKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChimpKit.m; sourceTree = "<group>"; };
 		C2325ED81296F459009BA5A7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C2325EDA1296F459009BA5A7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C2325F091296F63C009BA5A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C2A87EDD13B3A43B0084A30C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C2BFCC63134CA06500F3184D /* SubscribeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeAlertView.h; sourceTree = "<group>"; };
-		C2BFCC64134CA06500F3184D /* SubscribeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeAlertView.m; sourceTree = "<group>"; };
+		C2B1C4FC13FAAF890091D116 /* ChimpKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChimpKit.h; sourceTree = "<group>"; };
+		C2B1C4FD13FAAF890091D116 /* ChimpKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChimpKit.m; sourceTree = "<group>"; };
+		C2B1C4FE13FAAF890091D116 /* CKAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAuthViewController.h; sourceTree = "<group>"; };
+		C2B1C4FF13FAAF890091D116 /* CKAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAuthViewController.m; sourceTree = "<group>"; };
+		C2B1C50013FAAF890091D116 /* SubscribeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeAlertView.h; sourceTree = "<group>"; };
+		C2B1C50113FAAF890091D116 /* SubscribeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeAlertView.m; sourceTree = "<group>"; };
+		C2B1C50313FAAF890091D116 /* CKAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKAuthViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +90,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				C2325EA61296E7FE009BA5A7 /* ChimpKit.h */,
-				C2325EA71296E7FE009BA5A7 /* ChimpKit.m */,
-				C2BFCC63134CA06500F3184D /* SubscribeAlertView.h */,
-				C2BFCC64134CA06500F3184D /* SubscribeAlertView.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				C2325E601296E71D009BA5A7 /* Libs */,
+				C2B1C4FA13FAAF890091D116 /* Core */,
 				C2325E9D1296E7C8009BA5A7 /* Sample Code */,
-				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -191,6 +185,36 @@
 			name = "Sample Code";
 			sourceTree = "<group>";
 		};
+		C2B1C4FA13FAAF890091D116 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C2B1C4FB13FAAF890091D116 /* Classes */,
+				C2B1C50213FAAF890091D116 /* Nibs */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C2B1C4FB13FAAF890091D116 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C2B1C4FC13FAAF890091D116 /* ChimpKit.h */,
+				C2B1C4FD13FAAF890091D116 /* ChimpKit.m */,
+				C2B1C4FE13FAAF890091D116 /* CKAuthViewController.h */,
+				C2B1C4FF13FAAF890091D116 /* CKAuthViewController.m */,
+				C2B1C50013FAAF890091D116 /* SubscribeAlertView.h */,
+				C2B1C50113FAAF890091D116 /* SubscribeAlertView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C2B1C50213FAAF890091D116 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				C2B1C50313FAAF890091D116 /* CKAuthViewController.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,6 +269,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* ChimpKit2ViewController.xib in Resources */,
+				C2B1C50713FAAF890091D116 /* CKAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +289,9 @@
 				C2325E9C1296E7B5009BA5A7 /* SBJsonWriter.m in Sources */,
 				C2325EA41296E7F2009BA5A7 /* ChimpKit2AppDelegate.m in Sources */,
 				C2325EA51296E7F2009BA5A7 /* ChimpKit2ViewController.m in Sources */,
-				C2325EA81296E7FE009BA5A7 /* ChimpKit.m in Sources */,
-				C2BFCC65134CA06500F3184D /* SubscribeAlertView.m in Sources */,
+				C2B1C50413FAAF890091D116 /* ChimpKit.m in Sources */,
+				C2B1C50513FAAF890091D116 /* CKAuthViewController.m in Sources */,
+				C2B1C50613FAAF890091D116 /* SubscribeAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,8 +42,8 @@ protocol, which includes the following methods:
         NSLog(@"Response Error: %@", error);
     }
 
-Fetching data is as simple as calling API methods directly on the wrapper object. 
-Check the API [documentation](http://www.mailchimp.com/api/1.3) for details.
+Fetching data is as simple as calling callApiMethod:withParams: with the name of the desired 
+API method on the wrapper object. Check the API [documentation](http://www.mailchimp.com/api/1.3) for details.
 
 ###Canceling Requests
 
@@ -76,6 +76,27 @@ ChimpKit2 defaults to a 10 second timeout. You can change that (globally) to 30 
     [params setValue:mergeVars forKey:@"merge_vars"];
 
     [ck callApiMethod:@"listSubscribe" withParams:params];
+
+
+### MailChimp now supports OAuth2 and so does ChimpKit:
+
+	//You don't have to use a navigation controller, but we'll put a cancel button on it for you if you do
+	CKAuthViewController *authViewController = [[CKAuthViewController alloc] initWithClientId:@"<YOUR_CLIENT_ID>" 
+																			  andClientSecret:@"<YOUR_CLIENT_SEEKRUT>"];
+	authViewController.delegate = self;
+	UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:authViewController] autorelease];
+	[self presentModalViewController:navigationController animated:YES];
+
+Your delegate must implement the CKAuthViewControllerDelegate protocol. The required methods are:
+
+	- (void)ckAuthSucceededWithApiKey:(NSString *)apiKey;
+	- (void)ckAuthFailedWithError:(NSError *)error;
+	
+Your delegate can optionally implement:
+
+	- (void)ckAuthUserDismissedView;
+
+If you care to know when the user taps the cancel button.
 
 ## Notes
 

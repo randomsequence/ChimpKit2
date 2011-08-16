@@ -3,7 +3,7 @@
 //  ChimpKit2
 //
 //  Created by Amro Mousa on 11/19/10.
-//  Copyright 2010 MailChimp. All rights reserved.
+//  Copyright 2011 MailChimp. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -25,7 +25,7 @@
 @end
 
 @interface ChimpKit : NSOperation {
-    id  delegate;
+    id<ChimpKitDelegate> delegate;
     SEL onSuccess;
     SEL onFailure;
 
@@ -39,7 +39,7 @@
     NSMutableData *responseData;
 }
 
-@property (assign, readwrite) id delegate;
+@property (assign, readwrite) id<ChimpKitDelegate> delegate;
 @property (nonatomic, retain) id userInfo;
 
 @property (nonatomic, retain) NSString *apiUrl;
