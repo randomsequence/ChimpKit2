@@ -64,7 +64,7 @@
         shownAuthView = YES;
 
         //You don't have to use a navigation controller, but we'll put a cancel button on it for you if you do
-        CKAuthViewController *authViewController = [[CKAuthViewController alloc] initWithClientId:@"<YOUR_CLIENT_ID>" andClientSecret:@"<YOUR_CLIENT_SEEKRUT>"];
+        CKAuthViewController *authViewController = [[[CKAuthViewController alloc] initWithClientId:@"<YOUR_CLIENT_ID>" andClientSecret:@"<YOUR_CLIENT_SECRET"] autorelease];
         authViewController.delegate = self;
         UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:authViewController] autorelease];
         [self presentModalViewController:navigationController animated:YES];
