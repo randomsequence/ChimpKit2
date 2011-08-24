@@ -40,9 +40,12 @@
     self.title = @"Connect to MailChimp";
     self.connectionData = [NSMutableData data];
     
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
-                                                                                            target:self 
-                                                                                            action:@selector(cancelButtonPressed:)] autorelease];
+    //If presented modally in a new VC, add the cancel button
+    if ([self.navigationController.viewControllers objectAtIndex:0] == self) {
+        self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+                                                                                               target:self 
+                                                                                               action:@selector(cancelButtonPressed:)] autorelease];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
