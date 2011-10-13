@@ -34,15 +34,25 @@
         //Set the delegate to self so we can handle button presses
         self.delegate = self;
 
-        UITextField *aTextField = [[[UITextField alloc] initWithFrame:CGRectZero] autorelease];
-        aTextField.borderStyle = UITextBorderStyleRoundedRect;
-        aTextField.placeholder = @"Email Address";
-        aTextField.keyboardType = UIKeyboardTypeEmailAddress;
-        aTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-        aTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        aTextField.delegate = self;
-        self.textField = aTextField;        
-        [self addSubview:self.textField];
+		if ([self respondsToSelector:@selector(setAlertViewStyle:)]) {
+			self.alertViewStyle = UIAlertViewStylePlainTextInput;
+			
+			self.textField = [self textFieldAtIndex:0];
+		} else {
+			UITextField *aTextField = [[[UITextField alloc] initWithFrame:CGRectZero] autorelease];
+			aTextField.borderStyle = UITextBorderStyleRoundedRect;
+			aTextField.delegate = self;
+			
+			self.textField = aTextField;
+			
+			[self addSubview:self.textField];
+		}
+		
+		// Common text field properties
+		self.textField.placeholder = @"Email Address";
+		self.textField.keyboardType = UIKeyboardTypeEmailAddress;
+		self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
+		self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         
         self.listId = aListId;
         
@@ -53,39 +63,42 @@
         //so retain ourselves just in case
         [self retain];
     }
+	
     return self;
 }
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
-    
-    CGRect lowestRect = CGRectZero;
-    for (UIView *view in self.subviews) {
-        //Find the lowest view's rect so we can position the textField later
-        if ([view isKindOfClass:[UILabel class]] && (view.frame.origin.y >= lowestRect.origin.y)) {
-            lowestRect = view.frame;
-        }
+	
+	if (![self respondsToSelector:@selector(setAlertViewStyle:)]) {
+		CGRect lowestRect = CGRectZero;
+		for (UIView *view in self.subviews) {
+			//Find the lowest view's rect so we can position the textField later
+			if ([view isKindOfClass:[UILabel class]] && (view.frame.origin.y >= lowestRect.origin.y)) {
+				lowestRect = view.frame;
+			}
 
-        //Shift the buttons down (they're instances of a private class so we can't reference it by name)
-        if (![view isKindOfClass:[UITextField class]] && ![view isKindOfClass:[UILabel class]] && ![view isKindOfClass:[UIImageView class]]) {
-            view.frame = CGRectMake(CGRectGetMinX(view.frame),
-                                    CGRectGetMinY(view.frame) + kSubscriptionAlertViewTextFieldHeight,
-                                    CGRectGetWidth(view.frame),
-                                    CGRectGetHeight(view.frame));
-        }
-    }
-    
-    //Position the text field based on the lowest view's rect, which we found earlier
-    self.textField.frame = CGRectMake(CGRectGetMinX(lowestRect),
-                                      CGRectGetMaxY(lowestRect) + kSubscriptionAlertViewTextFieldYPadding,
-                                      CGRectGetWidth(lowestRect),
-                                      kSubscriptionAlertViewTextFieldHeight);
-    
-    //Adjust the size of the entire view to account for the height of the text field
-    self.frame = CGRectMake(CGRectGetMinX(self.frame), 
-                            CGRectGetMinY(self.frame), 
-                            CGRectGetWidth(self.frame), 
-                            CGRectGetHeight(self.frame) + kSubscriptionAlertViewTextFieldHeight + kSubscriptionAlertViewTextFieldYPadding);
+			//Shift the buttons down (they're instances of a private class so we can't reference it by name)
+			if (![view isKindOfClass:[UITextField class]] && ![view isKindOfClass:[UILabel class]] && ![view isKindOfClass:[UIImageView class]]) {
+				view.frame = CGRectMake(CGRectGetMinX(view.frame),
+										CGRectGetMinY(view.frame) + kSubscriptionAlertViewTextFieldHeight,
+										CGRectGetWidth(view.frame),
+										CGRectGetHeight(view.frame));
+			}
+		}
+		
+		//Position the text field based on the lowest view's rect, which we found earlier
+		self.textField.frame = CGRectMake(CGRectGetMinX(lowestRect),
+										  CGRectGetMaxY(lowestRect) + kSubscriptionAlertViewTextFieldYPadding,
+										  CGRectGetWidth(lowestRect),
+										  kSubscriptionAlertViewTextFieldHeight);
+		
+		//Adjust the size of the entire view to account for the height of the text field
+		self.frame = CGRectMake(CGRectGetMinX(self.frame), 
+								CGRectGetMinY(self.frame), 
+								CGRectGetWidth(self.frame), 
+								CGRectGetHeight(self.frame) + kSubscriptionAlertViewTextFieldHeight + kSubscriptionAlertViewTextFieldYPadding);
+	}
 }
 
 - (void) show {

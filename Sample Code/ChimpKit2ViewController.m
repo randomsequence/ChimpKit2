@@ -50,25 +50,25 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-//    SubscribeAlertView *alert = [[SubscribeAlertView alloc] initWithTitle:@"Subscribe" 
-//                                                                  message:@"Enter your email address to subscribe to our mailing list." 
-//                                                                   apiKey:@"<YOUR API KEY>" 
-//                                                                   listId:@"<LIST ID>" 
-//                                                        cancelButtonTitle:@"Cancel"
-//                                                     subscribeButtonTitle:@"Subscribe"];
-//    [alert show];
-//    [alert release];
+    SubscribeAlertView *alert = [[SubscribeAlertView alloc] initWithTitle:@"Subscribe" 
+                                                                  message:@"Enter your email address to subscribe to our mailing list." 
+                                                                   apiKey:@"<YOUR API KEY>" 
+                                                                   listId:@"<LIST ID>" 
+                                                        cancelButtonTitle:@"Cancel"
+                                                     subscribeButtonTitle:@"Subscribe"];
+    [alert show];
+    [alert release];
     
     
-    if (!shownAuthView) {
-        shownAuthView = YES;
-
-        //You don't have to use a navigation controller, but we'll put a cancel button on it for you if you do
-        CKAuthViewController *authViewController = [[[CKAuthViewController alloc] initWithClientId:@"<YOUR_CLIENT_ID>" andClientSecret:@"<YOUR_CLIENT_SECRET"] autorelease];
-        authViewController.delegate = self;
-        UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:authViewController] autorelease];
-        [self presentModalViewController:navigationController animated:YES];
-    }
+//    if (!shownAuthView) {
+//        shownAuthView = YES;
+//
+//        //You don't have to use a navigation controller, but we'll put a cancel button on it for you if you do
+//        CKAuthViewController *authViewController = [[[CKAuthViewController alloc] initWithClientId:@"<YOUR_CLIENT_ID>" andClientSecret:@"<YOUR_CLIENT_SECRET"] autorelease];
+//        authViewController.delegate = self;
+//        UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:authViewController] autorelease];
+//        [self presentModalViewController:navigationController animated:YES];
+//    }
 }
 
 - (void)ckAuthSucceededWithApiKey:(NSString *)apiKey {
