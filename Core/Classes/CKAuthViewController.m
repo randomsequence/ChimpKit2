@@ -7,7 +7,7 @@
 //
 
 #import "CKAuthViewController.h"
-#import "JSON.h"
+#import "SBJson.h"
 
 @interface CKAuthViewController()
 - (void)authWithClientId:(NSString *)yd andSecret:(NSString *)secret;
