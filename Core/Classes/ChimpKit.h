@@ -25,25 +25,27 @@
 @end
 
 @interface ChimpKit : NSOperation {
-    id<ChimpKitDelegate> delegate;
-    SEL onSuccess;
-    SEL onFailure;
+@private    
+    id<ChimpKitDelegate> _delegate;
+    
+    NSString *_apiUrl;
+    NSString *_apiKey;
 
-    NSString *apiUrl;
-    NSString *apiKey;
+    id _userInfo;
 
-    id userInfo;
-
-@private
-    NSURLConnection *connection;
-    NSMutableData *responseData;
+    NSString *_responseString;
+    NSInteger _responseStatusCode;
+    NSError *_error;    
+    
+    NSURLConnection *_connection;
+    NSMutableData *_responseData;
 }
 
 @property (assign, readwrite) id<ChimpKitDelegate> delegate;
 @property (nonatomic, retain) id userInfo;
 
-@property (nonatomic, retain) NSString *apiUrl;
-@property (nonatomic, retain) NSString *apiKey;
+@property (nonatomic, copy) NSString *apiUrl;
+@property (nonatomic, copy) NSString *apiKey;
 
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSMutableData *responseData;

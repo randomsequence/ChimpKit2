@@ -22,7 +22,8 @@ static NSUInteger timeout = 10;
 
 @implementation ChimpKit
 
-@synthesize apiUrl, apiKey, delegate, connection, responseData, userInfo;
+@synthesize apiUrl = _apiUrl, apiKey = _apiKey, delegate = _delegate, connection = _connection, responseData = _responseData, userInfo = _userInfo;
+
 @synthesize responseString = _responseString;
 @synthesize responseStatusCode = _responseStatusCode;
 @synthesize error = _error;
@@ -34,10 +35,16 @@ static NSUInteger timeout = 10;
 #pragma mark - Initialization
 
 - (void)setApiKey:(NSString*)key {
-    apiKey = key;
-    if (apiKey) {
+    
+    if (key == _apiKey)
+        return;
+    
+    [_apiKey release];
+    _apiKey = [key copy];
+    
+    if (_apiKey) {
         //Parse out the datacenter and template it into the URL.
-        NSArray *apiKeyParts = [apiKey componentsSeparatedByString:@"-"];
+        NSArray *apiKeyParts = [_apiKey componentsSeparatedByString:@"-"];
         if ([apiKeyParts count] > 1) {
             self.apiUrl = [NSString stringWithFormat:@"https://%@.api.mailchimp.com/1.3/?method=", [apiKeyParts objectAtIndex:1]];
         }
@@ -48,7 +55,7 @@ static NSUInteger timeout = 10;
 	self = [super init];
 	if (self != nil) {
         self.apiUrl  = @"https://api.mailchimp.com/1.3/?method=";
-        [self setApiKey:key];
+        self.apiKey = key;
         self.delegate = aDelegate;
         self.responseData = [NSMutableData data];
 	}
